@@ -3,19 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shopping Cart</title>
+  <title>📝 Notepad Cart</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div class="notepad">
+    <h1>📝 Notepad Cart</h1>
 
-  <h1>Shopping Cart</h1>
-  <input id="itemInput" type="text" placeholder="Enter an item" />
-  <button id="addItemButton">Add Item</button>
-  <button id="removeItemButton">Remove Last Item</button>
+    <!-- Input field for item name -->
+    <input id="itemInput" type="text" placeholder="Enter an item" />
 
-  <ul id="cart"></ul>
+    <!-- Button to add item -->
+    <button id="addItemButton">Add Item</button>
+
+    <!-- Button to remove the last item -->
+    <button id="removeItemButton">Remove Last Item</button>
+
+    <!-- Button to clear all items -->
+    <button id="clearCartButton">Clear All</button>
+
+    <!-- Cart item count -->
+    <p id="itemCount"><strong>Items in cart:</strong> 0</p>
+
+    <!-- List of items in the cart -->
+    <ul id="cart"></ul>
+  </div>
 
   <script src="script.js"></script>
 </body>
 </html>
-
