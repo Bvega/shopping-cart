@@ -1,15 +1,19 @@
+/* === BACKGROUND === */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f0e68c; /* soft yellow */
-  margin: 0;
-  padding: 40px;
+  background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Notepad container */
+/* === NOTEPAD CONTAINER === */
 .notepad {
   background: repeating-linear-gradient(
     to bottom,
@@ -17,22 +21,28 @@ body {
     #fff8dc 28px,
     #f0e68c 29px
   );
-  border-left: 6px solid red; /* left-side binding line */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  border-left: 6px solid red;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
   padding: 20px;
   width: 100%;
   max-width: 500px;
-  border-radius: 6px;
 }
 
-/* Header */
+/* === HEADER & DATE === */
 .notepad h1 {
   text-align: center;
-  margin-top: 0;
-  margin-bottom: 20px;
+  margin: 0;
 }
 
-/* Input & Buttons */
+#dateArea {
+  text-align: right;
+  font-style: italic;
+  font-size: 14px;
+  margin: 10px 0 20px;
+}
+
+/* === FORM ELEMENTS === */
 input, button {
   width: 100%;
   padding: 10px;
@@ -44,7 +54,7 @@ input, button {
 
 button {
   background-color: #f4b400;
-  color: #000;
+  color: black;
   font-weight: bold;
   cursor: pointer;
 }
@@ -53,6 +63,7 @@ button:hover {
   background-color: #e4a400;
 }
 
+/* === CART LIST === */
 ul {
   list-style-type: none;
   padding-left: 0;

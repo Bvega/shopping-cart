@@ -59,10 +59,13 @@ function renderCart() {
       renderCart();
     });
 
-    li.appendChild(deleteBtn);
+    li.appendChild(deleteBtn); // ✅ FIXED
     cartList.appendChild(li);
   });
 
   // === Update the item count display ===
   itemCount.innerHTML = `<strong>Items in cart:</strong> ${cart.length}`;
 }
+
+// === Show Today's Date ===
+document.getElementById("todayDate").innerText = new Date().toLocaleDateString();

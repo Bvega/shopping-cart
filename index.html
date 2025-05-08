@@ -6,26 +6,20 @@
   <title>📝 Notepad Cart</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body><body>
   <div class="notepad">
     <h1>📝 Notepad Cart</h1>
 
-    <!-- Input field for item name -->
+    <!-- DATE AREA -->
+    <div id="dateArea">Date: <span id="todayDate"></span></div>
+
+    <!-- Input -->
     <input id="itemInput" type="text" placeholder="Enter an item" />
-
-    <!-- Button to add item -->
     <button id="addItemButton">Add Item</button>
-
-    <!-- Button to remove the last item -->
     <button id="removeItemButton">Remove Last Item</button>
-
-    <!-- Button to clear all items -->
     <button id="clearCartButton">Clear All</button>
 
-    <!-- Cart item count -->
     <p id="itemCount"><strong>Items in cart:</strong> 0</p>
-
-    <!-- List of items in the cart -->
     <ul id="cart"></ul>
   </div>
 
