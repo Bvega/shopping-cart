@@ -1,33 +1,74 @@
 body {
-    font-family: sans-serif;
-    background-color: #f0f0f0;
-    padding: 20px;
-    max-width: 400px;
-    margin: auto;
-  }
-  
-  h1 {
-    text-align: center;
-  }
-  
-  input, button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    font-size: 16px;
-  }
-  
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  li {
-    padding: 8px;
-    background-color: white;
-    border: 1px solid #ccc;
-    margin-bottom: 5px;
-    border-radius: 4px;
-  }
-  
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0e68c; /* soft yellow */
+  margin: 0;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+/* Notepad container */
+.notepad {
+  background: repeating-linear-gradient(
+    to bottom,
+    #fff8dc,
+    #fff8dc 28px,
+    #f0e68c 29px
+  );
+  border-left: 6px solid red; /* left-side binding line */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 6px;
+}
+
+/* Header */
+.notepad h1 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+/* Input & Buttons */
+input, button {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #f4b400;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e4a400;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  padding: 10px;
+  border-bottom: 1px dashed #bbb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#itemCount {
+  text-align: right;
+  font-size: 14px;
+  margin-top: 10px;
+  color: #444;
+}
