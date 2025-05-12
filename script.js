@@ -28,44 +28,52 @@ removeItemButton.addEventListener("click", () => {
   renderCart();
 });
 
-// === FEATURE 1: Add Item with ENTER Key ===
+// === Add Item with ENTER Key ===
 itemInput.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
     addItemButton.click();
   }
 });
 
-// === FEATURE 2: Clear All Items ===
+// === Clear All Items from Cart ===
 clearCartButton.addEventListener("click", () => {
   cart = [];
   renderCart();
 });
 
-// === FEATURE 3: Render Cart and Add Delete Buttons ===
+// === Render Cart Items ===
 function renderCart() {
   cartList.innerHTML = "";
 
   cart.forEach((item, index) => {
     const li = document.createElement("li");
     li.innerText = item;
-
-    // Add delete button next to each item
-    const deleteBtn = document.createElement("button");
-    deleteBtn.innerText = "🗑️";
-    deleteBtn.style.marginLeft = "10px";
-
-    deleteBtn.addEventListener("click", () => {
-      cart.splice(index, 1);
-      renderCart();
-    });
-
-    li.appendChild(deleteBtn); // ✅ FIXED
+    li.setAttribute("data-index", index); // Used for delegation
     cartList.appendChild(li);
   });
 
-  // === Update the item count display ===
+  // Update item count display
   itemCount.innerHTML = `<strong>Items in cart:</strong> ${cart.length}`;
 }
+
+// === EVENT DELEGATION: Toggle Purchased on Click ===
+cartList.addEventListener("click", function (event) {
+  const clickedItem = event.target;
+  if (clickedItem.tagName !== "LI") return;
+
+  clickedItem.classList.toggle("purchased");
+});
+
+// === EVENT DELEGATION: Delete Item on Right-Click ===
+cartList.addEventListener("contextmenu", function (event) {
+  event.preventDefault();
+  const clickedItem = event.target;
+  if (clickedItem.tagName !== "LI") return;
+
+  const index = clickedItem.getAttribute("data-index");
+  cart.splice(index, 1);
+  renderCart();
+});
 
 // === Show Today's Date ===
 document.getElementById("todayDate").innerText = new Date().toLocaleDateString();

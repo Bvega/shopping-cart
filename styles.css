@@ -75,6 +75,14 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
+}
+
+/* === TOGGLED STATE === */
+.purchased {
+  text-decoration: line-through;
+  color: gray;
+  font-style: italic;
 }
 
 #itemCount {
